@@ -149,8 +149,81 @@ $_GET['page'] : '';
                 </div>
                 
                 <!--Kategori Artikel-->
+                <div class="right-panel">
+                    <div class="top-right-panel">Kategori Artikel</div>
+                    <div class="bottom-right-panel">
+                        <ul>
+                            <?php 
+                                foreach ($data["main_kategori"] as $kategori){
+                            ?>
+                            <li><a href="<?php echo SITE_URL; ?>?page=kategori
+                                   &&action=detail&&id=<?php echo $kategori -> id_kategori; ?>">
+                                <?php echo $kategori->nama_kategori; ?>
+                                    (<?php echo $kategori->total; ?>)</a></li>
+                                <?php
+                                    }
+                                ?>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!--Info User-->
+                <div class="right-panel">
+                    <div class="top-right-panel">Info User</div>
+                    <div class="bottom-right-panel">
+                        
+                        <table class="table" style="margin-bottom: 0;">
+                            <tbody>
+                                <tr>
+                                    <td style="border-top: 0;">IP User</td>
+                                    <td style="border-top: 0;">:</td>
+                                    <td style="border-top: 0;">
+                                        <b><?php echo $_SERVER["REMOTE_ADDR"]; ?></b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Waktu</td> <td>:</td>
+                                    <td>
+                                        <b><?php 
+                                            date_default_timezone_set('Asia/Jakarta');
+                                            echo date('h : i : s');
+                                            ?>
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal</td> <td>:</td>  
+                                    <td><b><?php echo date('d F Y');?></b></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal</td> <td>:</td>
+                                        <td><b>
+                                           <?php
+                                                echo $_SERVER['HTTP_USER_AGENT'];
+                                           ?>
+                                        </b></td>
+                                </tr>>
+                            </tbody>                            
+                        </table>
+                    </div>
+                </div>
             </div>
-            
+            <!--Akhir dari konten Kanan-->
+            <div class="clear"></div>
+        </div>
+        <!--Akhir dari Konten-->
+        
+        <!--Footer Website-->
+        <div id="footer">
+            <div class="content-footer">
+                <div class="left-footer"></div>
+                <div class="middle-footer">
+                    &copy; Copyright by SMA YAPITA. All Right reserved.
+                    Powered by <a href="http://is.its.ac.id" target="_blank">SI ITS</a>
+                </div>
+                <div class="right-footer"></div>
+            </div>  
+            <div class="clear"></div>
         </div>
     </body>
 </html>
