@@ -53,9 +53,69 @@ $_GET['page'] : '';
             <div class="left-side" style="margin-top: 48px;"></div>
             <div class="middle-side">
             <ul>
-            
+                <li><a href="<?php echo SITE_URL; ?>" <?php if($page =="" || 
+                       $page=="home") echo 'class="current"'; ?>>Home</a>></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=bukutamu" <?php 
+                    if($page=bukutamu) echo 'class="current"'; ?>>Bukutamu</a></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=artikel" <?php 
+                    if($page=artikel) echo 'class="current"'; ?>>Artikel</a></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=siswa" <?php 
+                    if($page=siswa) echo 'class="current"'; ?>>Data Siswa</a></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=guru" <?php 
+                    if($page=guru) echo 'class="current"'; ?>>Data Guru</a></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=alumni" <?php 
+                    if($page=alumni) echo 'class="current"'; ?>>Data Alumni</a></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=tentang" <?php 
+                    if($page=tentang) echo 'class="current"'; ?>>Tentang</a></li>
+                <li><a href="<?php echo SITE_URL; ?>?page=kontak" <?php 
+                    if($page=kontak) echo 'class="current"'; ?>>Kontak</a></li>
             </ul>
+                <div class="clear"></div>
             </div>
+            <div class="right-side"></div>
+            <div class="clear"></div>
+            <!--Akhir dari Menu-->
+            
+            <?php
+                if($page=="" || $page == "home"){}
+            ?>                     
+            
+            <!--Slider WEB-->
+            <div id="slider-website">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target = "#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target = "#myCarousel" data-slide-to="1" class="active"></li>
+                    <li data-target = "#myCarousel" data-slide-to="2" class="active"></li>
+                </ol>
+                <!--Wrapper untuk Slide-->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="<?php echo PATH; ?>/resources/images/banner_1.jpg" alt="Sekolahku rumahku">
+                    </div>
+                    
+                    <div class="item">
+                        <img src="<?php echo PATH; ?>/resources/images/banner_2.jpg" alt="Sekolahku rumahku">
+                    </div>
+                    
+                    <div class="item">
+                        <img src="<?php echo PATH; ?>/resources/images/banner_3.jpg" alt="Sekolahku rumahku">
+                    </div>
+                </div>                
+                </div>
+                
+             <!--Kontrol Kiri Kanan-->
+             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+             </a>
+             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+             </a>
+            </div>            
         </div>
+        
     </body>
 </html>
