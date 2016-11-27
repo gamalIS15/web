@@ -116,6 +116,41 @@ $_GET['page'] : '';
              </a>
             </div>            
         </div>
-        
+        <!--Konten Website-->
+        <div id="content">
+            <!--Konten Kiri-->
+            <div id="left-content">
+                <?php
+                    $view = new View($viewName);
+                    $view ->bind('data',$data);
+                    $view ->forceRender();
+                ?>
+            </div>
+            <!--Akhir Konten Kiri-->
+            
+            <!--Konten Kanan-->
+            <div class="right-content">
+                <!--Artikel Terbaru-->
+                <div class="right-panel">
+                    <div class="top-right-panel">Artikel Terbaru</div>
+                    <div class="bottom-right-panel">
+                        <ul>
+                            <?php
+                                foreach ($data["main_artikel"] as $artikel){
+                            ?>
+                            <li><a href="<?php echo SITE_URL; ?>?page=artikel
+                                   &&action=detail&&id=<?php echo $artikel -> id_artikel; ?>">
+                                <?php echo $artikel->judul; ?></a></li>
+                            <?php 
+                            }
+                            ?>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <!--Kategori Artikel-->
+            </div>
+            
+        </div>
     </body>
 </html>
