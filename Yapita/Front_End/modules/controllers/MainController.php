@@ -1,6 +1,6 @@
 <?php
 namespace modules\controllers;
-use modules\controllers;
+use \Controllers;
 
 class MainController extends Controller{
     
