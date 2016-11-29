@@ -13,5 +13,6 @@
 
 
 **Developer Team** : @gamal15 , @bobbyIlham1 , @gilangDimizza
+**Testing : Speed test (?), Stress test (?), UI test(?)
 
 > SEMANGAT !!!!
