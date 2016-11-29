@@ -12,6 +12,6 @@
 4. Commit dan Pull beserta komen apa yg telah dikerjakan
 
 
-**Developer Team** : @gamal15 , @bobbyIlham1 , @gilangDimiza
+**Developer Team** : @gamal15 , @bobbyIlham1 , @gilangDimizza
 
 > SEMANGAT !!!!
