@@ -1,229 +1,160 @@
 <?php
-$page = (isset($_GET['page']) && $_GET['page']) ?
-$_GET['page'] : '';
+
+$page = (isset($_GET['page']) && $_GET['page']) ? $_GET['page'] : '';
 ?>
+
 <!DOCTYPE html>
-<!--[if IE 8]>><html lang="en" class="ie8"><![endif]-->
-<!--[if IE 9]>><html lang="en" class="ie8"><![endif]-->
-<!--[if !IE ]>><!-->><html lang="en"><!--<![endif]-->
-    <head>
-    <meta charset="utf-8" />
-    <title>SMA YAPITA</title>
+<html lang="en">
 
-    <!--CSS-->>
-    <link href="resources/css/bootstrap.min.css"
-     rel="stylesheet" />
-    <link href="resources/css/jquery.dataTables.min.css"
-     rel="stylesheet" />
-    <link href="resources/css/style.min.css"
-     rel="stylesheet" />
+<head>
 
-    <!--Javascript-->>
-    <script type="text/javascript" src="resources/js/jquery.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="resources/js/expand.js"></script>
-    <script type="text/javascript" src="resources/js/common.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    </head>
-    <body>
-    <!--Main Website-->>
-        <div id="main">
+    <title>ADMIN SMA YAPITA</title>
 
-            <!--Header Website-->>
-            <div id="Header">
-            <!--Logo-->>
-                <div id="logo">
-                <h1>SMA YAPITA</h1>
-                <h2>Keputih, Surabaya</h2>
-                </div>
-            </div>
+    <!-- Bootstrap -->
+    <link href="<?php echo PATH; ?>resources/css/bootstrap.min.css" rel="stylesheet">
 
-            <!--Sosmed-->>
-            <div class="social">
-            <ul>
-                <li><a href="#"><img src="resources/images/Facebook.png" alt="facebook"></a></li>
-                <li><a href="#"><img src="resources/images/Twitter.png" alt="twitter"></a></li>
-            </ul>
-            </div>
-            <div class="clear"></div>
+    <!-- CSS -->
+    <link href="<?php echo PATH; ?>resources/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="<?php echo PATH; ?>resources/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="<?php echo PATH; ?>resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Pengelompokan -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">ADMIN SMA YAPITA</a>
         </div>
-        <!--Akhir Header-->>
-        <div id="top-menu-website">
-            <div class="left-side" style="margin-top: 48px;"></div>
-            <div class="middle-side">
-            <ul>
-                <li><a href="<?php echo SITE_URL; ?>" <?php if($page =="" || 
-                       $page=="home") echo 'class="current"'; ?>>Home</a>></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=bukutamu" <?php 
-                    if($page=bukutamu) echo 'class="current"'; ?>>Bukutamu</a></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=artikel" <?php 
-                    if($page=artikel) echo 'class="current"'; ?>>Artikel</a></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=siswa" <?php 
-                    if($page=siswa) echo 'class="current"'; ?>>Data Siswa</a></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=guru" <?php 
-                    if($page=guru) echo 'class="current"'; ?>>Data Guru</a></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=alumni" <?php 
-                    if($page=alumni) echo 'class="current"'; ?>>Data Alumni</a></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=tentang" <?php 
-                    if($page=tentang) echo 'class="current"'; ?>>Tentang</a></li>
-                <li><a href="<?php echo SITE_URL; ?>?page=kontak" <?php 
-                    if($page=kontak) echo 'class="current"'; ?>>Kontak</a></li>
+        <!-- Top Menu -->
+        <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $data["login"]->nama_lengkap; ?> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="<?php echo SITE_URL; ?>?page=user&action=detail&id=<?php echo $data["login"]->id_user; ?>"><i class="fa fa-fw fa-user"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo SITE_URL; ?>?page=user&action=update&id=<?php echo $data["login"]->id_user; ?>"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="<?php echo PATH; ?>index.php?page=login&&action=logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Sidebar Menu -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li <?php if($page=="" || $page=="home") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="../" target="_blank"><i class="fa fa-fw fa-paper-plane"></i> Lihat Website</a>
+                </li>
+                <li <?php if($page=="bukutamu") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=bukutamu"><i class="fa fa-fw fa-book"></i> Bukutamu</a>
+                </li>
+                <li <?php if($page=="kategori") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=kategori"><i class="fa fa-fw fa-th-large"></i> Kategori Artikel</a>
+                </li>
+                <li <?php if($page=="artikel") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=artikel"><i class="fa fa-fw fa-newspaper-o"></i> Artikel</a>
+                </li>
+                <li <?php if($page=="jurusan") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=jurusan"><i class="fa fa-fw fa-graduation-cap"></i> Jurusan</a>
+                </li>
+                <li <?php if($page=="siswa") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=siswa"><i class="fa fa-fw fa-users"></i> Data Siswa</a>
+                </li>
+                <li <?php if($page=="alumni") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=alumni"><i class="fa fa-fw fa-users"></i> Data Alumni</a>
+                </li>
+                <li <?php if($page=="guru") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=guru"><i class="fa fa-fw fa-users"></i> Data Guru</a>
+                </li>
+                <li <?php if($page=="tentang") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=tentang"><i class="fa fa-fw fa-building"></i> Tentang Sekolah</a>
+                </li>
+                <li <?php if($page=="kontak") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=kontak"><i class="fa fa-fw fa-phone-square"></i> Kontak</a>
+                </li>
+                <li <?php if($page=="user") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=user"><i class="fa fa-fw fa-users"></i> Manajemen User</a>
+                </li>
             </ul>
-                <div class="clear"></div>
-            </div>
-            <div class="right-side"></div>
-            <div class="clear"></div>
-            <!--Akhir dari Menu-->
-            
+        </div>
+        <!-- navbar-collapse -->
+    </nav>
+
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
             <?php
-                if($page=="" || $page == "home"){}
-            ?>                     
-            
-            <!--Slider WEB-->
-            <div id="slider-website">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target = "#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target = "#myCarousel" data-slide-to="1" class="active"></li>
-                    <li data-target = "#myCarousel" data-slide-to="2" class="active"></li>
-                </ol>
-                <!--Wrapper untuk Slide-->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="<?php echo PATH; ?>/resources/images/banner_1.jpg" alt="Sekolahku rumahku">
-                    </div>
-                    
-                    <div class="item">
-                        <img src="<?php echo PATH; ?>/resources/images/banner_2.jpg" alt="Sekolahku rumahku">
-                    </div>
-                    
-                    <div class="item">
-                        <img src="<?php echo PATH; ?>/resources/images/banner_3.jpg" alt="Sekolahku rumahku">
-                    </div>
-                </div>                
-                </div>
-                
-             <!--Kontrol Kiri Kanan-->
-             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                 <span class="sr-only">Previous</span>
-             </a>
-             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                 <span class="sr-only">Next</span>
-             </a>
-            </div>            
+                $view = new View($viewName);
+                $view->bind('data', $data);
+                $view->forceRender();
+            ?>
+
         </div>
-        <!--Konten Website-->
-        <div id="content">
-            <!--Konten Kiri-->
-            <div id="left-content">
-                <?php
-                    $view = new View($viewName);
-                    $view ->bind('data',$data);
-                    $view ->forceRender();
-                ?>
-            </div>
-            <!--Akhir Konten Kiri-->
-            
-            <!--Konten Kanan-->
-            <div class="right-content">
-                <!--Artikel Terbaru-->
-                <div class="right-panel">
-                    <div class="top-right-panel">Artikel Terbaru</div>
-                    <div class="bottom-right-panel">
-                        <ul>
-                            <?php
-                                foreach ($data["main_artikel"] as $artikel){
-                            ?>
-                            <li><a href="<?php echo SITE_URL; ?>?page=artikel
-                                   &&action=detail&&id=<?php echo $artikel -> id_artikel; ?>">
-                                <?php echo $artikel->judul; ?></a></li>
-                            <?php 
-                            }
-                            ?>
-                        </ul>                        
-                    </div>
-                </div>
-                
-                <!--Kategori Artikel-->
-                <div class="right-panel">
-                    <div class="top-right-panel">Kategori Artikel</div>
-                    <div class="bottom-right-panel">
-                        <ul>
-                            <?php 
-                                foreach ($data["main_kategori"] as $kategori){
-                            ?>
-                            <li><a href="<?php echo SITE_URL; ?>?page=kategori
-                                   &&action=detail&&id=<?php echo $kategori -> id_kategori; ?>">
-                                <?php echo $kategori->nama_kategori; ?>
-                                    (<?php echo $kategori->total; ?>)</a></li>
-                                <?php
-                                    }
-                                ?>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!--Info User-->
-                <div class="right-panel">
-                    <div class="top-right-panel">Info User</div>
-                    <div class="bottom-right-panel">
-                        
-                        <table class="table" style="margin-bottom: 0;">
-                            <tbody>
-                                <tr>
-                                    <td style="border-top: 0;">IP User</td>
-                                    <td style="border-top: 0;">:</td>
-                                    <td style="border-top: 0;">
-                                        <b><?php echo $_SERVER["REMOTE_ADDR"]; ?></b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Waktu</td> <td>:</td>
-                                    <td>
-                                        <b><?php 
-                                            date_default_timezone_set('Asia/Jakarta');
-                                            echo date('h : i : s');
-                                            ?>
-                                        </b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tanggal</td> <td>:</td>  
-                                    <td><b><?php echo date('d F Y');?></b></td>
-                                </tr>
-                                <tr>
-                                    <td>Tanggal</td> <td>:</td>
-                                        <td><b>
-                                           <?php
-                                                echo $_SERVER['HTTP_USER_AGENT'];
-                                           ?>
-                                        </b></td>
-                                </tr>>
-                            </tbody>                            
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!--Akhir dari konten Kanan-->
-            <div class="clear"></div>
-        </div>
-        <!--Akhir dari Konten-->
-        
-        <!--Footer Website-->
-        <div id="footer">
-            <div class="content-footer">
-                <div class="left-footer"></div>
-                <div class="middle-footer">
-                    &copy; Copyright by SMA YAPITA. All Right reserved.
-                    Powered by <a href="http://is.its.ac.id" target="_blank">SI ITS</a>
-                </div>
-                <div class="right-footer"></div>
-            </div>  
-            <div class="clear"></div>
-        </div>
-    </body>
+        <!-- container-fluid -->
+
+    </div>
+    <!-- page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="<?php echo PATH; ?>resources/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="<?php echo PATH; ?>resources/js/bootstrap.min.js"></script>
+
+<!-- Data Tables JavaScript -->
+<script src="<?php echo PATH; ?>resources/js/jquery.dataTables.min.js"></script>
+
+<!-- TinyMCE JavaScript -->
+<script src="<?php echo PATH; ?>resources/tinymce/tinymce.min.js"></script>
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: ".editor"
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".data-table").DataTable({
+
+            "language": {
+                "emptyTable": "Tidak ada data"
+            }
+        });
+    });
+</script>
+
+</body>
+
 </html>
