@@ -32,3 +32,38 @@
 <b><?php echo $guru->nama_lengkap; ?></b>
 </td>
 </tr>
+<tr>
+<td>NIP</td><td>:</td>
+<td><b><?php echo $guru->nip; ?></b></td>
+</tr>
+    
+<tr>
+<td>Jenis Kelamin</td><td>:</td>
+<td><b><?php echo $guru->jenis_kelamin; ?></b></td>
+</tr>
+    
+<tr>
+<td>Status</td><td>:</td>
+<td><b><?php echo $guru->status; ?></b></td>
+</tr>    
+
+<tr>
+<td>Mata Pelajaran</td><td>:</td>
+<td><b><?php echo $guru->mata_pelajaran; ?></b></td>
+</tr>
+    
+<tr>
+<td>Tempat Tanggal Lahir</td><td>:</td>
+<td><b><?php echo $guru->tempat_lahir; ?>, <?php echo date("d-m-Y", strtotime($guru->alamat; ?></b></td>
+</tr>
+    
+    </tbody>
+    </table>
+    
+    </td>
+    </tr>
+    <?php
+        }                                                                  
+    ?>
+    </tbody>
+</table>
