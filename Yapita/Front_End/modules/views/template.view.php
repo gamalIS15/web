@@ -68,6 +68,7 @@
 		<li><a href="<?php echo SITE_URL; ?>?page=tentang" <?php if($page=="tentang") echo 'class="current"'; ?>>Tentang Sekolah</a></li>
                 <li><a href="<?php echo SITE_URL; ?>?page=guru" <?php if($page=="guru") echo 'class="current"'; ?>>Data Guru</a></li>
 		<li><a href="<?php echo SITE_URL; ?>?page=siswa" <?php if($page=="siswa") echo 'class="current"'; ?>>Data Siswa</a></li>
+		<li><a href="<?php echo SITE_URL; ?>?page=psb" <?php if($page=="psb") echo 'class="current"'; ?>>PSB</a></li>
                 <li><a href="<?php echo SITE_URL; ?>?page=kontak" <?php if($page=="kontak") echo 'class="current"'; ?>>Kontak</a></li>
             </ul>
             <div class="clear"></div>
