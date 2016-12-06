@@ -19,3 +19,9 @@
 **Testing : Speed test (?), Stress test (?), UI test(?)**
 
 > SEMANGAT !!!!
+
+
+**UPDATE**
+
+1. Front end sudah jadi
+2. Back End progress
