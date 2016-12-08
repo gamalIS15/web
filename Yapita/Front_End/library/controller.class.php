@@ -17,7 +17,7 @@ class Controller{
         $view->bind('viewName', $viewName);
         $view->bind('data', $data);
     }
-    
+
     public function back() {
 
         echo '<script>history.go(-1);</script>';
