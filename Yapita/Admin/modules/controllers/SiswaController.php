@@ -102,7 +102,7 @@ class SiswaController extends MainController {
                 $imageName = $foto["name"];
                 
                 if($foto["name"]) {
-                    $imageName = date("h_i_s_Y_m_d") .
+                    $imageName = date("h_i_s_Y_m_d_") .
                     str_replace(" ", "_", $nama) . '.jpg';
                     
                     move_uploaded_file($foto["tmp_name"], '../public/images/siswa/' . $imageName);
@@ -130,13 +130,13 @@ class SiswaController extends MainController {
         
         $this->template('frmSiswa', array('jurusan' => 
             $data, 'error' => $error, 'success' => $success, 
-            'title' => "Tambah Siswa / Alumni"));                
+            'title' => 'Tambah Siswa / Alumni'));                
     }
     
     public function update() {
         
         $id = isset($_GET["id"]) ? $_GET["id"] : '0';
-        $this->model('jurusan');
+        $this->model("jurusan");
         $listJurusan = $this->jurusan->get();
         $this->model('siswa');
         
@@ -205,8 +205,10 @@ class SiswaController extends MainController {
                 );
                 
                 if($foto["name"]) {
-                    $imageName = date("h_i_s_Y_m_d") .
+                    $imageName = date("h_i_s_Y_m_d_") .
                     str_replace(" ", "_", $nama) . '.jpg';
+                    
+            unlink('../public/images/siswa/' . $data[0]->images);
                     
                     move_uploaded_file($foto["tmp_name"], '../public/images/siswa/' . $imageName);
                     
@@ -223,7 +225,7 @@ class SiswaController extends MainController {
                     );
                 }
                 
-                $update = $this->siswa->update($dataUpdate, array('id_siswa => $id'));
+                $update = $this->siswa->update($dataUpdate, array('id_siswa' => $id));
                 if($update) {
                     $success = "Data Berhasil Disimpan.";
                 }
@@ -233,7 +235,7 @@ class SiswaController extends MainController {
         $this->template('frmSiswa', array('jurusan' => 
             $listJurusan, 'siswa' => $data[0], 'error' => 
             $error, 'success' => $success, 
-            'title' => "Tambah Siswa / Alumni"));  
+            'title' => 'Update Siswa / Alumni'));  
     }
 }
 ?>
