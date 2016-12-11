@@ -27,3 +27,48 @@
 <?php echo $error; ?>
 </li>
 <?php ) ?>
+    </ul>
+    </div>
+    <?php
+             }else if(isset($data["success"]))    {
+    ?>
+    
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <?php echo$data["success"]; ?>
+        </div>
+    <meta http-equiv="refresh" content="1;url=<?php echo PATH; ?>?page=artikel">
+    
+    <?php } ?>
+    
+    <form method="post" role="form" enctype="multipart/form-data">
+        <table class="table-responsive table">
+            
+            <tbody>
+                <tr>
+                    <td style="width: 200px;"><label>Judul</label></td>
+                    <td style="width: 1px;">:</td>
+                    <td>
+                        <input type="text" name="judul" <?php if(isset($data["artikel"])) echo 'value="' . $data["artikel"]->judul . '"'; ?> class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><label>Kategori</label></td>
+                    <td style="width: 1px;">:</td>
+                    <td>
+                        <select class="form-control" name="kategori">
+   <?php
+        foreach($data["kategori"] as $kategori) {
+   ?>
+                            <option <?php if(isset($data["artikel"])){
+                                              if($data["artikel"]->id_kategori == $kategori->id_kategori) echo 'selected';
+                                             }
+                                             ?> value="<?php echo $kategori->id_kategori; ?>">
+                                <?php echo $kategori->nama_kategori; ?></option>
+                            <?php
+                                             }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
