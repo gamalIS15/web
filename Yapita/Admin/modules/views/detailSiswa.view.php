@@ -24,18 +24,19 @@
 </tr>
 <tr>
 <td><b>NIS</b></td><td style="width: 1px;">:</td>
-  <div class="table-responsive">
-    <table class="table table-hover data-table table-striped tablesorter">
-      <thead>
-        <tr>
-          <th class="header" style="width: 40px;">No</th>
-          <th class="header">Foto</th>
-          <th class="header">NIS</th>
-          <th class="header">Nama</th>
-          <th class="header">Jurusan</th>
-          <th class="header">Jenis Kelamin</th>
-          <th class="header">Angkatan</th>
-          <th class="header" style="width: 150px;">Action</th>
-        </tr>
-      </thead>
+  <td><?php echo $data["siswa"]->nis; ?></td>
+  </tr>
+  <tr>
+    <td><b>Jurusan</b></td><td style="width: 1px;">:</td>
+    <td><?php echo $data["siswa"]->nama_jurusan; ?></td>
+  </tr>
+  <tr>
+    <td><b>Status</b></td><td style="width: 1px;">:</td>
+    <td>
+      <span class="labbel label-primary" style="font-size:15px;">
+        <?php echo $data["siswa"]->status; ?></span>
+    </td>
+  </tr>
+  <tr>
+    
       
