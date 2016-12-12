@@ -58,3 +58,19 @@
     <td><b>Foto</b></td><td style="width: 1px;">:</td>
     <td>
 
+<?php
+          if($data["siswa"]->images) {
+      ?>
+      <img src="../public/images/siswa/<?php echo $data["siswa"]->images; ?>" style="max-width: 200px;" alt="<?php echo $data["siswa"]->nama_lengkap; ?>">
+      <?php
+          }else{
+      ?>
+      <img src="../resources/images/no_user.jpg" style="max-width: 200px;" alt="<?php echo $data["siswa"]->nama_lengkap; ?>">
+      <?php
+            }
+?>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
