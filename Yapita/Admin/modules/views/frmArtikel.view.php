@@ -81,4 +81,12 @@
                 </tr>
                 <tr>
                                         
+                    <td style="width: 200px;"><label>Gambar</label></td>
+                    <td style="width: 1px;">:</td>
+                    <td>
+                        <input type="file" name="images" class="form-control">
+                        <?php
+                             if(isset($data["artikel"])) {
+                                 if($data["artikel"]->images) {
+                        ?>
                         
