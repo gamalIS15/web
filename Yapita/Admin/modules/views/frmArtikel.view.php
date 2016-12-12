@@ -90,3 +90,11 @@
                                  if($data["artikel"]->images) {
                         ?>
                         
+                     <img src="../public/images/artikel/<?php echo $data["artikel"]->images; ?>" alt="images" style="width:100%; max-width: 200px;">
+                        <?php
+                                 }
+                             }
+                        ?>
+                    </td>
+                </tr>
+                    
