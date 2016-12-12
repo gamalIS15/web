@@ -4,7 +4,7 @@
 <ol class="breadcrumb">
 <li><a href="<?php SITE_URL; ?>">
 <i class="fa fa-dashboard"></i></a></li>
-<li class=active"><i class="fa fa-users"></i> Detail Siswa / Alumni</li>
+<li class="active"><i class="fa fa-users"></i> Detail Siswa / Alumni</li>
 </ol>
 
 </div>
@@ -24,3 +24,18 @@
 </tr>
 <tr>
 <td><b>NIS</b></td><td style="width: 1px;">:</td>
+  <div class="table-responsive">
+    <table class="table table-hover data-table table-striped tablesorter">
+      <thead>
+        <tr>
+          <th class="header" style="width: 40px;">No</th>
+          <th class="header">Foto</th>
+          <th class="header">NIS</th>
+          <th class="header">Nama</th>
+          <th class="header">Jurusan</th>
+          <th class="header">Jenis Kelamin</th>
+          <th class="header">Angkatan</th>
+          <th class="header" style="width: 150px;">Action</th>
+        </tr>
+      </thead>
+      
