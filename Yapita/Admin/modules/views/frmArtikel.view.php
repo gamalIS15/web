@@ -72,3 +72,13 @@
                     </td>
                 </tr>
                 <tr>
+
+                    <td style="width: 200px;"><label>Penulis</label></td>
+                    <td style="width: 1px;">:</td>
+                    <td>
+                        <input type="text" <?php if(isset($data["artikel"])) echo 'value="' . $data["artikel"]->penulis . '"'; ?> name ="penulis" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                                        
+                        
