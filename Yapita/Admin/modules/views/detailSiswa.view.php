@@ -74,3 +74,19 @@
   <tr>
     <td></td>
     <td></td>
+ <td>
+      <?php
+            if($data["siswa"]->status == "Siswa") {
+      ?>
+      <a class="btn btn-primary" href="<?php echo SITE_URL; ?>?page=alumni">Daftar Alumni</a>
+      <?php
+            }
+      ?>
+      <a class="btn btn-warning" href="<?php echo SITE_URL; ?>?page=siswa&&action=delete&&id=<?php echo $data["siswa"]->id_siswa; ?>" onclick="return confirm('Are you sure delete this data?');">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+  
+  </div>
+</div>
