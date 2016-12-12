@@ -97,4 +97,22 @@
                         ?>
                     </td>
                 </tr>
-                    
+                    <tr>
+                        <td style="width: 200px;"><label>Isi</label></td>
+                        <td style="width: 1px;">:</td>
+                        <td>
+                            <textarea class="form-control editor" name="isi" rows="7">
+                                <?php if(isset($data["artikel"])) echo $data["artikel"]->isi; ?></textarea>
+                        </td>
+                </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><button type="submit" class="btn btn-primary">Submit</button><a class="btn btn-warning" href="<?php echo PATH; ?>?page=artikel">Tampilkan Semua Artikel</a></td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </form>
+    </div>
+</div>
