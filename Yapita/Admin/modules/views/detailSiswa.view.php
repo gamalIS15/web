@@ -39,4 +39,22 @@
   </tr>
   <tr>
     
-      
+    <td><b>Jenis Kelamin</b></td><td style="width: 1px;">:</td>
+    <td><?php echo $data["siswa"]->jenis_kelamin; ?></td>
+  </tr>
+  <tr>
+    <td><b>No. HP</b></td><td style="width: 1px;">:</td>
+    <td><?php echo $data["siswa"]->nomor_hp; ?></td>
+  </tr>
+  <tr>
+    <td><b>Angkatan</b></td><td style="width: 1px;">:</td>
+    <td><?php echo $data["siswa"]->angkatan; ?></td>
+  </tr>
+  <tr>
+    <td><b>Alamat</b></td><td style="width: 1px;">:</td>
+    <td><?php echo $data["siswa"]->alamat; ?></td>
+  </tr>
+  <tr>
+    <td><b>Foto</b></td><td style="width: 1px;">:</td>
+    <td>
+
