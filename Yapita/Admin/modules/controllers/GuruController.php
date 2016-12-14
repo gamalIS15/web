@@ -1,8 +1,11 @@
 <?php
+
+
 use \modules\controllers\MainController;
 
 class GuruController extends MainController {
-   public function index() {
+
+    public function index() {
 
         $this->model('guru');
 
@@ -26,8 +29,8 @@ class GuruController extends MainController {
         $this->template('detailGuru', array('guru' => $data[0]));
 
     }
-   
-   public function delete() {
+
+    public function delete() {
 
         $id = isset($_GET["id"]) ? $_GET["id"] : 0;
 
@@ -46,8 +49,8 @@ class GuruController extends MainController {
         }
 
     }
-   
-   public function insert() {
+
+    public function insert() {
 
         $this->model('guru');
 
@@ -139,8 +142,8 @@ class GuruController extends MainController {
         $this->template('frmGuru', array('error' => $error, 'success' => $success, 'title' => 'Tambah Guru'));
 
     }
-   
-   public function update() {
+
+    public function update() {
 
         $id = isset($_GET["id"]) ? $_GET["id"] : '0';
 
@@ -254,6 +257,5 @@ class GuruController extends MainController {
         $this->template('frmGuru', array('guru' => $data[0], 'error' => $error, 'success' => $success, 'title' => 'Update Guru'));
 
     }
-
 }
 ?>

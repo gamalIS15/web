@@ -1,6 +1,9 @@
 <?php
 
+use \modules\controllers\MainController;
+
 class UserController extends MainController {
+
     public function index() {
 
         $this->model('user');
@@ -10,6 +13,20 @@ class UserController extends MainController {
         $this->template('user', array('user' => $data));
     }
 		
+	
+	
+		
+
+	function generateHash($password) {
+		$salt = '$2a$07$R.gJb2U2N.FmZ4hPp1y2CN$';
+		$hash = crypt($password, $salt);
+		$hash = substr($hash, 29);
+		return $hash;
+	}
+	
+	
+
+
     public function detail() {
 
         $id = isset($_GET["id"]) ? $_GET["id"] : '0';
@@ -25,7 +42,7 @@ class UserController extends MainController {
         $this->template('detailUser', array('user' => $data[0]));
 
     }
-    
+
     public function delete() {
 
         $id = isset($_GET["id"]) ? $_GET["id"] : 0;
@@ -45,8 +62,8 @@ class UserController extends MainController {
         }
 
     }
-	
-	    public function insert() {
+
+    public function insert() {
 
         $this->model('user');
 
@@ -126,8 +143,8 @@ class UserController extends MainController {
 
         $this->template('frmUser', array('error' => $error, 'success' => $success, 'title' => 'Tambah User'));
 
-    }		
-	
+    }
+
     public function update() {
 
         $id = isset($_GET["id"]) ? $_GET["id"] : '0';
@@ -218,6 +235,6 @@ class UserController extends MainController {
 
         $this->template('frmUser', array('user' => $data[0], 'error' => $error, 'success' => $success, 'title' => 'Update User'));
 
-    }	
+    }
 }
 ?>
