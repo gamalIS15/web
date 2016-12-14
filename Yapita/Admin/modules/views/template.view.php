@@ -95,6 +95,9 @@ $page = (isset($_GET['page']) && $_GET['page']) ? $_GET['page'] : '';
                 <li <?php if($page=="tentang") echo 'class="active"'; ?>>
                     <a href="<?php echo PATH; ?>?page=tentang"><i class="fa fa-fw fa-building"></i> Tentang Sekolah</a>
                 </li>
+                <li <?php if($page=="psb") echo 'class="active"'; ?>>
+                    <a href="<?php echo PATH; ?>?page=psb"><i class="fa fa-fw fa-building"></i> PSB </a>
+                </li>
                 <li <?php if($page=="kontak") echo 'class="active"'; ?>>
                     <a href="<?php echo PATH; ?>?page=kontak"><i class="fa fa-fw fa-phone-square"></i> Kontak</a>
                 </li>

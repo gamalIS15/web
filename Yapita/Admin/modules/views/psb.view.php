@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1>Tentang Sekolah</h1>
+        <h1>Penerimaan Siswa Baru</h1>
         <ol class="breadcrumb">
             <li><a href="<?php SITE_URL; ?>"><i class="fa fa-dashboard"></i> </a></li>
-            <li class="active"><i class="fa fa-building"></i> Tentang Sekolah</li>
+            <li class="active"><i class="fa fa-building"></i>PSB</li>
         </ol>
 
     </div>
@@ -38,7 +38,7 @@
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <?php echo $data["success"]; ?>
             </div>
-            <meta http-equiv="refresh" content="0;url=<?php echo PATH; ?>?page=tentang">
+            <meta http-equiv="refresh" content="0;url=<?php echo PATH; ?>?page=psb">
 
         <?php } ?>
 
@@ -48,7 +48,7 @@
                 <tbody>
                 <tr>
                     <td>
-                        <textarea class="form-control editor" name="isi" rows="8"><?php echo $data["tentang"]->tentang; ?></textarea>
+                        <textarea class="form-control editor" name="isi" rows="8"><?php echo $data["psb"]->psb; ?></textarea>
                     </td>
                 </tr>
                 <tr>

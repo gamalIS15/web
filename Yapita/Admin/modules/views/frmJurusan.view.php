@@ -1,9 +1,10 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1>Tentang Sekolah</h1>
+        <h1><?php echo $data["title"]; ?></h1>
         <ol class="breadcrumb">
             <li><a href="<?php SITE_URL; ?>"><i class="fa fa-dashboard"></i> </a></li>
-            <li class="active"><i class="fa fa-building"></i> Tentang Sekolah</li>
+            <li><a href="<?php SITE_URL; ?>?page=jurusan"><i class="fa fa-graduation-cap"></i> Jurusan</a></li>
+            <li class="active"><i class="fa fa-pencil"></i> <?php echo $data["title"]; ?></li>
         </ol>
 
     </div>
@@ -38,7 +39,7 @@
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <?php echo $data["success"]; ?>
             </div>
-            <meta http-equiv="refresh" content="0;url=<?php echo PATH; ?>?page=tentang">
+            <meta http-equiv="refresh" content="1;url=<?php echo PATH; ?>?page=jurusan">
 
         <?php } ?>
 
@@ -47,12 +48,16 @@
 
                 <tbody>
                 <tr>
+                    <td style="width: 200px;"><label>Nama Jurusan</label></td>
+                    <td style="width: 1px;">:</td>
                     <td>
-                        <textarea class="form-control editor" name="isi" rows="8"><?php echo $data["tentang"]->tentang; ?></textarea>
+                        <input type="text" name="jurusan" <?php if(isset($data["jurusan"])) echo 'value="' . $data["jurusan"]->nama_jurusan . '"'; ?> class="form-control">
                     </td>
                 </tr>
                 <tr>
-                    <td><button type="submit" class="btn btn-primary">Update</button</td>
+                    <td></td>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-warning" href="<?php echo PATH; ?>?page=jurusan">Tampilkan Semua Jurusan</a> </td>
                 </tr>
                 </tbody>
 
