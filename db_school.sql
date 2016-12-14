@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2016 at 12:39 PM
+-- Generation Time: Dec 14, 2016 at 09:12 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -42,7 +42,8 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id_artikel`, `id_kategori`, `judul`, `penulis`, `isi`, `tanggal`, `waktu`, `images`) VALUES
-(15, 1, 'tse', 'rss', '<p>tts</p>', '2016-12-12', '05:26:37', '');
+(15, 1, 'tse', 'rss', '<p>tts</p>', '2016-12-12', '05:26:37', ''),
+(16, 1, 'Berbagi Takjil Membangun Kebahagiaan', 'Reg', '<p>"Hidup ini bukan hanya tentang kebahagiaanmu sendiri, tapi juga berbagi kebahagiaan dengan orang disekitar kita"</p>\r\n<p>~ Muhamad Agus Syafii ~</p>\r\n<p>Bulan Ramadhan ialah bulan yang penuh berkah, keutamaan dan kemuliaan. Karena di bulan Ramadhan umat islam menjalankan ibadah puasa selama satu bulan penuh. Ketika berpuasa umat islam harus menahan hawa nafsu dunia. Hal ini bertujuan untuk mengurangi perbuatan kriminalitas bagi diri sendiri maupun bagi orang lain. Selain berpuasa, umat muslim juga dianjurkan untuk bersedekah. Berbagi kebahagiaan kepada umat muslim yang lain.</p>\r\n<p>Bulan Juni kemarin, OSIS SMA Yapita membuat kegiatan berbagi takjil di bulan Ramadhan. Kegiatan ini berlokasi di sepanjang jalan Ir. Soekarno Hatta tepatnya didekat kampus C UNAIR Surabaya. Bersama OSIS SMA Yapita, kegiatan pembagian takjil ini diikuti oleh siswa kelas X. Mereka membagikan takjil kepada para pengendara baik sepeda motor maupun mobil.</p>\r\n<p>Didukung oleh guru dan kepala sekolah, OSIS SMA Yapita mengadakan kegiatan berbagi takjil ini dengan tujuan untuk bersedekah. Disamping bersedekah di bulan Ramadhan merupakan sebuah keutamaan, kegiatan berbagi takjil ini membawa kebahagiaan bagi siswa maupun pengendara. Harapannya kegiatan ini bisa membawa hikmah bagi siswa dan membangun kebahagiaan bersama dengan para pengendara. Tidak perlu menunggu sukses untuk berbagi selagi apa yang kita miliki bisa membawa kebahagiaan bagi orang lain.</p>', '2016-12-13', '06:08:24', '06_08_24_2016_12_13_Berbagi_Takjil_Membangun_Kebahagiaan.jpg');
 
 -- --------------------------------------------------------
 
@@ -57,6 +58,13 @@ CREATE TABLE `bukutamu` (
   `website` varchar(255) DEFAULT NULL,
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bukutamu`
+--
+
+INSERT INTO `bukutamu` (`id_bukutamu`, `full_name`, `email`, `website`, `comment`) VALUES
+(1, 'tes', 'tes@mail.com', '', 'good');
 
 -- --------------------------------------------------------
 
@@ -89,6 +97,15 @@ CREATE TABLE `jurusan` (
   `id_jurusan` int(11) NOT NULL,
   `nama_jurusan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jurusan`
+--
+
+INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
+(1, 'IPS'),
+(2, 'IPA'),
+(3, 'Bahasa');
 
 -- --------------------------------------------------------
 
@@ -125,6 +142,23 @@ CREATE TABLE `kontak` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `psb`
+--
+
+CREATE TABLE `psb` (
+  `psb` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psb`
+--
+
+INSERT INTO `psb` (`psb`) VALUES
+('<p>Sekolah ini berdiri sejak tahun 2016, dengan adanya sekolah ini. di harapkan siswa dapat mempelajari sesuatu yang baru yang tidak diajarkan dimanapun.</p>\r\n<p>Semoga semua siswa sukses kedepannya.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Salam,</p>\r\n<p><strong>Kepala Sekolah</strong></p>');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `siswa`
 --
 
@@ -140,6 +174,13 @@ CREATE TABLE `siswa` (
   `images` varchar(255) DEFAULT NULL,
   `status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id_siswa`, `id_jurusan`, `nama_lengkap`, `nis`, `jenis_kelamin`, `alamat`, `nomor_hp`, `angkatan`, `images`, `status`) VALUES
+(1, 1, 'nov', '123', 'Laki-laki', 'keputih', '123456', 2015, '', 'Siswa');
 
 -- --------------------------------------------------------
 
@@ -242,12 +283,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `bukutamu`
 --
 ALTER TABLE `bukutamu`
-  MODIFY `id_bukutamu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_bukutamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `guru`
 --
@@ -257,7 +298,7 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `kategori`
 --
@@ -272,7 +313,7 @@ ALTER TABLE `kontak`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user`
 --
