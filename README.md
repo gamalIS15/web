@@ -23,8 +23,8 @@
 
 **UPDATE**
 
-1. Front end sudah jadi
-2. Back End progress (85%)
+1. Front end sudah DONEEE
+2. Back End progress DONEE
 
 
 ##semangaat!!!!!!!
